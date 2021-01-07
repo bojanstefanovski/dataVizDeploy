@@ -29,13 +29,13 @@ app.get("/api/stations", function(req, res) {
     })
 })
 
-app.listen(Port, () => {
+app.listen(process.env.PORT || Port, () => {
     console.log("Server started")
 })
 
 //handle production 
 
-if(process.env.NODE_ENV=== 'production'){
+if(process.env.NODE_ENV === 'production'){
     //static folder
     app.use(express.static(__dirname+ '/public/'))
 
